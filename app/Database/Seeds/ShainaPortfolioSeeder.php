@@ -17,7 +17,7 @@ class ShainaPortfolioSeeder extends Seeder
             'phone' => '+63 9454038207', // Update with your actual phone
             'location' => 'Philippines',
             'summary' => 'Third-year computer science student and aspiring software engineer with three years of experience in web development. My passion for computer science brought me to the University of the Philippines Visayas, where I am pursuing my bachelor\'s degree. My primary focus is developing web projects, utilizing technologies such as HTML, CSS, JavaScript, PHP, SQL, and Java. Always eager to expand my skill set, I am currently delving into React and am open to learning new programming languages and frameworks.',
-            'image' => '1718773443997.jpg',
+            'profile_image' => '1718773443997.jpg',
             'linkedin' => 'https://www.linkedin.com/in/shainatalisay/',
             'github' => 'https://github.com/shaittoo', 
             'facebook' => 'https://www.facebook.com/shainamarietalisay/',
