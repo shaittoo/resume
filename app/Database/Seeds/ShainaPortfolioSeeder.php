@@ -11,7 +11,7 @@ class ShainaPortfolioSeeder extends Seeder
         // Create user profile
         $userData = [
             'name' => 'Shaina Talisay',
-            'email' => 'shaina.talisay@example.com', // You can update this
+            'email' => 'talisayshaina@gmail.com', // You can update this
             'password' => password_hash('password123', PASSWORD_DEFAULT), // Change this password
             'title' => 'Software Engineer',
             'phone' => '+1 (555) 123-4567', // Update with your actual phone
@@ -19,7 +19,6 @@ class ShainaPortfolioSeeder extends Seeder
             'summary' => 'Passionate Software Engineer with expertise in web development, specializing in modern technologies and creating efficient, scalable solutions. Experienced in full-stack development with a focus on user experience and clean code practices.',
             'linkedin' => 'https://www.linkedin.com/in/shainatalisay/',
             'github' => 'https://github.com/shainatalisay', // Update with your GitHub
-            'email' => 'talisayshaina@gmail.com',
             'facebook' => 'https://www.facebook.com/shainamarietalisay/',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
