@@ -6,20 +6,17 @@ on:
       - main # Or master, depending on your default branch name
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -39,7 +36,7 @@ jobs:
 
       - name: Configure for SQLite and Set Up Database
         run: |
-          # sed -i 's/CI_ENVIRONMENT = .*/CI_ENVIRONMENT = production/g' .env
+          sed -i 's/CI_ENVIRONMENT = .*/CI_ENVIRONMENT = production/g' .env
           sed -i 's/^database\.default\.DBDriver.*/database.default.DBDriver = SQLite3/g' .env
           sed -i 's|^database\.default\.database.*|database.default.database = /home/runner/work/resume/resume/writable/database.db|g' .env
           sed -i '/^database\.default\.hostname/s/^/#/' .env
@@ -72,16 +69,18 @@ jobs:
       - name: Move files for deployment
         run: mv localhost:8080/* static_site/
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-        with:
-          enablement: true
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './static_site'
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2 
