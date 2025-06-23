@@ -10,13 +10,13 @@ class ShainaPortfolioSeeder extends Seeder
     {
         // Create user profile
         $userData = [
-            'name' => 'Shaina Talisay',
+            'name' => 'Shaina Marie D. Talisay',
             'email' => 'talisayshaina@gmail.com', // You can update this
             'password' => password_hash('password123', PASSWORD_DEFAULT), // Change this password
             'title' => 'Software Engineer',
-            'phone' => '+1 (555) 123-4567', // Update with your actual phone
+            'phone' => '+63 9454038207', // Update with your actual phone
             'location' => 'Philippines',
-            'summary' => 'Passionate Software Engineer with expertise in web development, specializing in modern technologies and creating efficient, scalable solutions. Experienced in full-stack development with a focus on user experience and clean code practices.',
+            'summary' => 'Third-year computer science student and aspiring software engineer with three years of experience in web development. My passion for computer science brought me to the University of the Philippines Visayas, where I am pursuing my bachelor\'s degree. My primary focus is developing web projects, utilizing technologies such as HTML, CSS, JavaScript, PHP, SQL, and Java. Always eager to expand my skill set, I am currently delving into React and am open to learning new programming languages and frameworks.',
             'linkedin' => 'https://www.linkedin.com/in/shainatalisay/',
             'github' => 'https://github.com/shainatalisay', // Update with your GitHub
             'facebook' => 'https://www.facebook.com/shainamarietalisay/',
