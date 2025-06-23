@@ -291,7 +291,7 @@ With PlanIt, schedule making is more accessible than ever with just a simple tap
 
 eHalalan introduces a blockchain-powered voting system designed to solve the challenges faced by traditional election processes. By leveraging blockchain technology, eHalalan ensures that every vote cast is tamper-proof and transparent. Using smart contracts, the system automates vote counting and ensures accurate, real-time results. This eliminates manual errors and speeds up result reporting.',
                 'technologies' => 'Tailwind CSS, React.js, Solidity, Web3.js, Next.js, Node.js, Express.js, MongoDB, Firebase, MySQL, Git/GitHub, VS Code, Figma, Problem Solving, Team Collaboration, Communication, Time Management, Project Management',
-                'image' => 'ehalalan.jpg',
+                'image' => 'eHalalan.jpg',
                 'live_url' => 'https://ehalalan.vercel.app/',
                 'github_url' => 'https://github.com/eHalalan/ehalalan',
                 'start_date' => '2024-01-01',
