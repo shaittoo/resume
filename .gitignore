@@ -1,6 +1,5 @@
 # Folders that should be writable
 /writable/
-/public/uploads/
 
 # Composer dependencies
 /vendor/
