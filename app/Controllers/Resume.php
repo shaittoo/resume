@@ -27,21 +27,7 @@ class Resume extends BaseController
 
     public function index()
     {
-        // Get the first user from the database, regardless of ID
-        $firstUser = $this->userModel->first();
-        $user = $this->userModel->getWithRelations($firstUser['id']);
-        
-        $data = [
-            'title' => $user['name'] . ' - Resume',
-            'user' => $user,
-            'experience' => $user['experience'],
-            'education' => $user['education'],
-            'skills' => $this->skillsModel->getByCategory($user['id']),
-            'projects' => $user['projects'],
-            'featured_projects' => $this->projectsModel->getFeatured($user['id'])
-        ];
-
-        return view('resume/index', $data);
+        return 'Hello World';
     }
 
     public function setup()

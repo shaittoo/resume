@@ -54,10 +54,26 @@ jobs:
           php spark migrate
           php spark db:seed ShainaPortfolioSeeder
 
-      - name: Run Controller to Generate Static Page
+      - name: Start PHP Server
         run: |
-          mkdir -p static_site
-          php spark controller Resume index > static_site/index.html
+          php spark serve &> server.log &
+          sleep 15
+
+      - name: Create static site directory
+        run: mkdir static_site
+      
+      - name: Fetch the static site
+        run: wget --recursive --page-requisites --html-extension --convert-links --domains localhost --no-parent http://localhost:8080/ || true
+        # This downloads the site into a folder named 'localhost:8080'
+
+      - name: Display server log on failure
+        if: failure()
+        run: |
+          echo "###### WGET FAILED - DISPLAYING SERVER LOGS ######"
+          cat server.log
+
+      - name: Move files for deployment
+        run: mv localhost:8080/* static_site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

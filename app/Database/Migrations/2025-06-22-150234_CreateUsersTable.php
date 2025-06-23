@@ -58,7 +58,7 @@ class CreateUsersTable extends Migration
                 'constraint' => 255,
                 'null' => true,
             ],
-            'email' => [
+            'facebook' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
                 'null' => true,
