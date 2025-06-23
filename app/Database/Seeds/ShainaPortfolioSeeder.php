@@ -84,37 +84,37 @@ class ShainaPortfolioSeeder extends Seeder
         // Add skills
         $skillsData = [
             // Programming Languages
-            ['user_id' => $userId, 'name' => 'JavaScript', 'category' => 'Programming', 'proficiency' => 90, 'order_index' => 1],
-            ['user_id' => $userId, 'name' => 'Python', 'category' => 'Programming', 'proficiency' => 85, 'order_index' => 2],
-            ['user_id' => $userId, 'name' => 'PHP', 'category' => 'Programming', 'proficiency' => 80, 'order_index' => 3],
-            ['user_id' => $userId, 'name' => 'HTML/CSS', 'category' => 'Programming', 'proficiency' => 95, 'order_index' => 4],
+            ['user_id' => $userId, 'name' => 'JavaScript', 'category' => 'Programming', 'proficiency' => 90, 'order_index' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Python', 'category' => 'Programming', 'proficiency' => 85, 'order_index' => 2, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'PHP', 'category' => 'Programming', 'proficiency' => 80, 'order_index' => 3, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'HTML/CSS', 'category' => 'Programming', 'proficiency' => 95, 'order_index' => 4, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
             
             // Frameworks & Libraries
-            ['user_id' => $userId, 'name' => 'React.js', 'category' => 'Framework', 'proficiency' => 85, 'order_index' => 5],
-            ['user_id' => $userId, 'name' => 'Node.js', 'category' => 'Framework', 'proficiency' => 80, 'order_index' => 6],
-            ['user_id' => $userId, 'name' => 'Express.js', 'category' => 'Framework', 'proficiency' => 75, 'order_index' => 7],
-            ['user_id' => $userId, 'name' => 'Bootstrap', 'category' => 'Framework', 'proficiency' => 90, 'order_index' => 8],
-            ['user_id' => $userId, 'name' => 'Bulma CSS', 'category' => 'Framework', 'proficiency' => 85, 'order_index' => 9],
+            ['user_id' => $userId, 'name' => 'React.js', 'category' => 'Framework', 'proficiency' => 85, 'order_index' => 5, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Node.js', 'category' => 'Framework', 'proficiency' => 80, 'order_index' => 6, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Express.js', 'category' => 'Framework', 'proficiency' => 75, 'order_index' => 7, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Bootstrap', 'category' => 'Framework', 'proficiency' => 90, 'order_index' => 8, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Bulma CSS', 'category' => 'Framework', 'proficiency' => 85, 'order_index' => 9, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
             
             // Databases
-            ['user_id' => $userId, 'name' => 'MySQL', 'category' => 'Database', 'proficiency' => 80, 'order_index' => 10],
-            ['user_id' => $userId, 'name' => 'MongoDB', 'category' => 'Database', 'proficiency' => 75, 'order_index' => 11],
+            ['user_id' => $userId, 'name' => 'MySQL', 'category' => 'Database', 'proficiency' => 80, 'order_index' => 10, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'MongoDB', 'category' => 'Database', 'proficiency' => 75, 'order_index' => 11, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
             
             // Tools & Technologies
-            ['user_id' => $userId, 'name' => 'Git/GitHub', 'category' => 'Tools', 'proficiency' => 85, 'order_index' => 12],
-            ['user_id' => $userId, 'name' => 'VS Code', 'category' => 'Tools', 'proficiency' => 90, 'order_index' => 13],
-            ['user_id' => $userId, 'name' => 'Postman', 'category' => 'Tools', 'proficiency' => 80, 'order_index' => 14],
-            ['user_id' => $userId, 'name' => 'Figma', 'category' => 'Tools', 'proficiency' => 70, 'order_index' => 15],
+            ['user_id' => $userId, 'name' => 'Git/GitHub', 'category' => 'Tools', 'proficiency' => 85, 'order_index' => 12, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'VS Code', 'category' => 'Tools', 'proficiency' => 90, 'order_index' => 13, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Postman', 'category' => 'Tools', 'proficiency' => 80, 'order_index' => 14, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Figma', 'category' => 'Tools', 'proficiency' => 70, 'order_index' => 15, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
             
             // Soft Skills
-            ['user_id' => $userId, 'name' => 'Problem Solving', 'category' => 'Soft', 'proficiency' => 90, 'order_index' => 16],
-            ['user_id' => $userId, 'name' => 'Team Collaboration', 'category' => 'Soft', 'proficiency' => 85, 'order_index' => 17],
-            ['user_id' => $userId, 'name' => 'Communication', 'category' => 'Soft', 'proficiency' => 80, 'order_index' => 18],
-            ['user_id' => $userId, 'name' => 'Time Management', 'category' => 'Soft', 'proficiency' => 85, 'order_index' => 19],
+            ['user_id' => $userId, 'name' => 'Problem Solving', 'category' => 'Soft', 'proficiency' => 90, 'order_index' => 16, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Team Collaboration', 'category' => 'Soft', 'proficiency' => 85, 'order_index' => 17, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Communication', 'category' => 'Soft', 'proficiency' => 80, 'order_index' => 18, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Time Management', 'category' => 'Soft', 'proficiency' => 85, 'order_index' => 19, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
             
             // Languages
-            ['user_id' => $userId, 'name' => 'English', 'category' => 'Language', 'proficiency' => 95, 'order_index' => 20],
-            ['user_id' => $userId, 'name' => 'Filipino', 'category' => 'Language', 'proficiency' => 100, 'order_index' => 21]
+            ['user_id' => $userId, 'name' => 'English', 'category' => 'Language', 'proficiency' => 95, 'order_index' => 20, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Filipino', 'category' => 'Language', 'proficiency' => 100, 'order_index' => 21, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
         ];
 
         $this->db->table('skills')->insertBatch($skillsData);
