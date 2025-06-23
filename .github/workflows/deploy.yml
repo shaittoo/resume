@@ -43,9 +43,15 @@ jobs:
 
       - name: Start PHP Server
         run: |
-          php spark serve &
+          php spark serve &> server.log &
           sleep 15
       
+      - name: Check Server Log
+        run: |
+          echo "--- Server Log ---"
+          cat server.log
+          echo "--------------------"
+
       - name: Crawl site to create static files
         run: |
           mkdir -p static_site
