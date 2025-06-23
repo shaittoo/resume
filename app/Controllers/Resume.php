@@ -27,8 +27,9 @@ class Resume extends BaseController
 
     public function index()
     {
-        // Get the first user (assuming single user resume)
-        $user = $this->userModel->getWithRelations(1);
+        // Get the first user from the database, regardless of ID
+        $firstUser = $this->userModel->first();
+        $user = $this->userModel->getWithRelations($firstUser['id']);
         
         $data = [
             'title' => $user['name'] . ' - Resume',
