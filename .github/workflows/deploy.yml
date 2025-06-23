@@ -55,7 +55,9 @@ jobs:
           php spark db:seed ShainaPortfolioSeeder
 
       - name: Run Controller to Generate Static Page
-        run: php spark controller Resume index > static_site/index.html
+        run: |
+          mkdir -p static_site
+          php spark controller Resume index > static_site/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
