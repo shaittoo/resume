@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # Or master, depending on your default branch name
+      - main
 
 permissions:
   contents: read
@@ -25,7 +25,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-          extensions: mbstring, intl, gd, sqlite3
+          extensions: mbstring, intl, gd, sqlite3, pdo_sqlite
           tools: composer
 
       - name: Copy .env file
@@ -34,23 +34,11 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --optimize-autoloader
 
-      - name: Configure for SQLite and Set Up Database
+      - name: Set up database
         run: |
-          # sed -i 's/CI_ENVIRONMENT = .*/CI_ENVIRONMENT = production/g' .env
-          sed -i 's/^database\.default\.DBDriver.*/database.default.DBDriver = SQLite3/g' .env
-          sed -i 's|^database\.default\.database.*|database.default.database = /home/runner/work/resume/resume/writable/database.db|g' .env
-          sed -i '/^database\.default\.hostname/s/^/#/' .env
-          sed -i '/^database\.default\.username/s/^/#/' .env
-          sed -i '/^database\.default\.password/s/^/#/' .env
-          sed -i '/^database\.default\.port/s/^/#/' .env
-          mkdir -p writable
           mkdir -p writable/cache
-          mkdir -p writable/logs
-          mkdir -p writable/session
-          mkdir -p writable/uploads
           chmod -R 777 writable
           touch writable/database.db
-          chmod 666 writable/database.db
           php spark migrate
           php spark db:seed ShainaPortfolioSeeder
 
@@ -58,23 +46,13 @@ jobs:
         run: |
           php spark serve &> server.log &
           sleep 15
-
-      - name: Create static site directory
-        run: mkdir static_site
       
-      - name: Fetch the static site
-        run: wget --recursive --page-requisites --html-extension --convert-links --domains localhost --no-parent http://localhost:8080/ || true
-        # This downloads the site into a folder named 'localhost:8080'
-
-      - name: Display server log on failure
-        if: failure()
+      - name: Crawl site to create static files
         run: |
-          echo "###### WGET FAILED - DISPLAYING SERVER LOGS ######"
-          cat server.log
-
-      - name: Move files for deployment
-        run: mv localhost:8080/* static_site/
-
+          mkdir -p static_site
+          wget -r -p -E -k -e robots=off --domains localhost --no-parent http://localhost:8080/
+          mv localhost:8080/* static_site/
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -83,6 +61,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
