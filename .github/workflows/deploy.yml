@@ -1,0 +1,47 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Or master, depending on your default branch name
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: mbstring, intl, gd
+          tools: composer
+
+      - name: Copy .env file
+        run: cp env .env
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Start PHP Server
+        run: |
+          nohup php spark serve >- /dev/null 2>&1 &
+          sleep 10 # Give the server time to start up
+
+      - name: Create static site directory
+        run: mkdir static_site
+      
+      - name: Fetch the static site
+        run: wget --recursive --page-requisites --html-extension --convert-links --domains localhost --no-parent http://localhost:8080/
+        # This downloads the site into a folder named 'localhost:8080'
+
+      - name: Move files for deployment
+        run: mv localhost:8080/* static_site/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./static_site 

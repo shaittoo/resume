@@ -1,0 +1,23 @@
+# Folders that should be writable
+/writable/
+/public/uploads/
+
+# Composer dependencies
+/vendor/
+
+# Environment files
+.env
+env
+
+# IDE files and metadata
+.idea/
+.vscode/
+*.swp
+*~
+
+# Log files
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db 
