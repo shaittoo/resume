@@ -6,16 +6,10 @@ on:
       - main
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -49,7 +43,7 @@ jobs:
 
       - name: Start PHP Server
         run: |
-          php spark serve &> server.log &
+          php spark serve &
           sleep 15
       
       - name: Crawl site to create static files
@@ -58,21 +52,8 @@ jobs:
           wget -r -p -E -k -e robots=off --domains localhost --no-parent http://localhost:8080/
           mv localhost:8080/* static_site/
       
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: './static_site'
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./static_site 
