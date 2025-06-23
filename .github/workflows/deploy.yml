@@ -16,7 +16,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-          extensions: mbstring, intl, gd
+          extensions: mbstring, intl, gd, sqlite3
           tools: composer
 
       - name: Copy .env file
@@ -25,10 +25,23 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-dev --optimize-autoloader
 
+      - name: Configure for SQLite and Set Up Database
+        run: |
+          sed -i 's/^database\.default\.DBDriver.*/database.default.DBDriver = SQLite3/g' .env
+          sed -i 's/^database\.default\.database.*/database.default.database = writable\/database.db/g' .env
+          sed -i '/^database\.default\.hostname/s/^/#/' .env
+          sed -i '/^database\.default\.username/s/^/#/' .env
+          sed -i '/^database\.default\.password/s/^/#/' .env
+          sed -i '/^database\.default\.port/s/^/#/' .env
+          mkdir -p writable
+          touch writable/database.db
+          php spark migrate
+          php spark db:seed ShainaPortfolioSeeder
+
       - name: Start PHP Server
         run: |
-          nohup php spark serve >- /dev/null 2>&1 &
-          sleep 10 # Give the server time to start up
+          php spark serve >- /dev/null 2>&1 &
+          sleep 15
 
       - name: Create static site directory
         run: mkdir static_site
