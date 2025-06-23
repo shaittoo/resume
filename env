@@ -24,6 +24,7 @@ app.baseURL = 'http://localhost:8080/'
 # If you have trouble with `.`, you could also use `_`.
 # app.forceGlobalSecureRequests = false
 # app.CSPEnabled = false
+app.appTimezone = 'UTC'
 
 #--------------------------------------------------------------------
 # DATABASE
@@ -58,8 +59,10 @@ database.default.port = 3306
 # SESSION
 #--------------------------------------------------------------------
 
-# session.driver = 'CodeIgniter\Session\Handlers\FileHandler'
-# session.savePath = null
+session.driver = 'CodeIgniter\\Session\\Handlers\\FileHandler'
+session.cookieName = 'ci_session'
+session.expiration = 7200
+session.savePath = WRITEPATH . 'session'
 
 #--------------------------------------------------------------------
 # LOGGER
