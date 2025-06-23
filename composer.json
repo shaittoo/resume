@@ -84,13 +84,15 @@
             "dev-*": "4.6.x-dev"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "post-update-cmd": [
             "CodeIgniter\\ComposerScripts::postUpdate"
         ],
-        "post-autoload-dump": [
-            "@composer update --working-dir=utils --ignore-platform-req=php"
-        ],
+        "test": "phpunit",
+        "cs-fix": "php-cs-fixer fix --ansi --verbose --diff --dry-run",
+        "cs-fix-risky": "php-cs-fixer fix --ansi --verbose --diff --dry-run --allow-risky=yes",
         "analyze": [
             "Composer\\Config::disableProcessTimeout",
             "@phpstan:check",
@@ -103,13 +105,6 @@
             "utils/vendor/bin/php-cs-fixer check --ansi --verbose --diff --config=.php-cs-fixer.tests.php",
             "utils/vendor/bin/php-cs-fixer check --ansi --verbose --diff"
         ],
-        "cs-fix": [
-            "Composer\\Config::disableProcessTimeout",
-            "utils/vendor/bin/php-cs-fixer fix --ansi --verbose --diff --config=.php-cs-fixer.user-guide.php",
-            "utils/vendor/bin/php-cs-fixer fix --ansi --verbose --diff --config=.php-cs-fixer.no-header.php",
-            "utils/vendor/bin/php-cs-fixer fix --ansi --verbose --diff --config=.php-cs-fixer.tests.php",
-            "utils/vendor/bin/php-cs-fixer fix --ansi --verbose --diff"
-        ],
         "metrics": "utils/vendor/bin/phpmetrics --config=phpmetrics.json",
         "phpstan:baseline": [
             "bash -c \"rm -rf utils/phpstan-baseline/*.neon\"",
@@ -119,8 +114,7 @@
         ],
         "phpstan:check": "vendor/bin/phpstan analyse --verbose --ansi",
         "sa": "@analyze",
-        "style": "@cs-fix",
-        "test": "phpunit"
+        "style": "@cs-fix"
     },
     "scripts-descriptions": {
         "analyze": "Run static analysis",
