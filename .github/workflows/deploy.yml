@@ -36,7 +36,7 @@ jobs:
 
       - name: Configure for SQLite and Set Up Database
         run: |
-          sed -i 's/CI_ENVIRONMENT = .*/CI_ENVIRONMENT = production/g' .env
+          # sed -i 's/CI_ENVIRONMENT = .*/CI_ENVIRONMENT = production/g' .env
           sed -i 's/^database\.default\.DBDriver.*/database.default.DBDriver = SQLite3/g' .env
           sed -i 's|^database\.default\.database.*|database.default.database = /home/runner/work/resume/resume/writable/database.db|g' .env
           sed -i '/^database\.default\.hostname/s/^/#/' .env
