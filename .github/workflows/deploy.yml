@@ -36,6 +36,11 @@ jobs:
 
       - name: Set up database
         run: |
+          sed -i 's/database.default.DBDriver = .*/database.default.DBDriver = SQLite3/' .env
+          sed -i 's/# database.default.database = .*/database.default.database = writable\/database.db/' .env
+          sed -i 's/database.default.hostname = .*/# database.default.hostname = localhost/' .env
+          sed -i 's/database.default.username = .*/# database.default.username = root/' .env
+          sed -i 's/database.default.password = .*/# database.default.password = /' .env
           mkdir -p writable/cache
           chmod -R 777 writable
           touch writable/database.db
