@@ -1236,32 +1236,6 @@
                     </div>
                 </a>
                 <?php endif; ?>
-                
-                <?php if (!empty($user['email'])): ?>
-                 <a href="<?= esc($user['email']) ?>" target="_blank" class="social-cube">
-                    <div class="social-cube-inner">
-                        <div class="cube-face front"><i class="fas fa-globe"></i></div>
-                        <div class="cube-face top"></div>
-                        <div class="cube-face bottom"></div>
-                        <div class="cube-face left"></div>
-                        <div class="cube-face right"></div>
-                        <div class="cube-face back"></div>
-                    </div>
-                </a>
-                <?php endif; ?>
-
-                <?php if (!empty($user['email'])): ?>
-                <a href="mailto:<?= esc($user['email']) ?>" class="social-cube">
-                    <div class="social-cube-inner">
-                        <div class="cube-face front"><i class="fas fa-envelope"></i></div>
-                        <div class="cube-face top"></div>
-                        <div class="cube-face bottom"></div>
-                        <div class="cube-face left"></div>
-                        <div class="cube-face right"></div>
-                        <div class="cube-face back"></div>
-                    </div>
-                    </a>
-                <?php endif; ?>
             </div>
         </div>
 
