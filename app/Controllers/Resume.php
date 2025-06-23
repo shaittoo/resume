@@ -30,10 +30,6 @@ class Resume extends BaseController
         // Get the first user (assuming single user resume)
         $user = $this->userModel->getWithRelations(1);
         
-        if (!$user) {
-            return redirect()->to('/setup');
-        }
-
         $data = [
             'title' => $user['name'] . ' - Resume',
             'user' => $user,
