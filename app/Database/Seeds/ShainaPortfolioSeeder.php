@@ -153,25 +153,13 @@ class ShainaPortfolioSeeder extends Seeder
 
         // Add projects
         $projectsData = [
-            [
-                'user_id' => $userId,
-                'title' => 'E-Commerce Platform',
-                'description' => 'A full-stack e-commerce platform built with React.js and Node.js. Features include user authentication, product management, shopping cart, and payment integration.',
-                'technologies' => 'React.js, Node.js, Express.js, MongoDB, Stripe API',
-                'live_url' => 'https://ecommerce-demo.com',
-                'github_url' => 'https://github.com/shainatalisay/ecommerce-platform',
-                'start_date' => '2023-06-01',
-                'end_date' => '2023-08-31',
-                'featured' => 1,
-                'order_index' => 1,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ],
+            
             [
                 'user_id' => $userId,
                 'title' => 'OMS',
                 'description' => 'The Organization Management System (OMS) is a comprehensive web-based platform designed to streamline and manage the operations of organizations, clubs, or institutions. It integrates various features to enhance organizational efficiency, foster collaboration, and simplify administrative tasks.',
                 'technologies' => 'React.js, Node.js, Express.js, Sprint Planning, Project Management, Task Management, Kanban Board, Gantt Chart, FullStack, MongoDB, Firebase, MySQL, Git/GitHub, VS Code, Figma, Problem Solving, Team Collaboration, Communication, Time Management, Project Management',
+                'image' => 'oms.jpg',
                 'live_url' => 'https://omsapp.vercel.app/',
                 'github_url' => 'https://github.com/shaittoo/OMS',
                 'start_date' => '2023-03-01',
@@ -190,6 +178,7 @@ Each post will include a button to report the post as AI or not, or swipe left/r
 
 Tabs will be included, which will allow the user to navigate among the screens of the game. The screens of the game will include a feed, which contains the social media posts, the news, which will display the current events on the game.',
                 'technologies' => 'UI/UX Design, Figma, QA',
+                'image' => 'aidentify.jpg',
                 'live_url' => 'https://www.figma.com/design/3M8N1zlgJnwB4qrxnJAFrg/Design-Components?node-id=0-1&p=f&t=2WdGo7hx8gfEKV50-0',
                 'github_url' => 'https://github.com/shainatalisay/weather-app',
                 'start_date' => '2023-01-01',
@@ -204,6 +193,7 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'title' => 'BackinUP',
                 'description' => 'BackinUP is a platform for alumni to maintain a relationship with the university. This will facilitate communication, networking, and collaboration between alumni, current students, facility, and staff.',
                 'technologies' => 'PHP, HTML5, CSS3, SQL, Figma, UI/UX Design',
+                'image' => 'backinup.jpg',
                 'live_url' => 'http://localhost:8080',
                 'github_url' => 'https://github.com/shaittoo/alumnirelations',
                 'start_date' => '2024-01-01',
@@ -218,6 +208,7 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'title' => 'Miagao Service Finder',
                 'description' => 'Miagao Service Finder is a platform to help people to locate a wide range of services in Miagao, Iloilo.',
                 'technologies' => 'PHP, CodeIgniter 4, Bulma CSS, MySQL, JavaScript',
+                'image' => 'servicefinder.jpg',
                 'live_url' => 'https://miservicefinder.000webhostapp.com/',
                 'github_url' => 'https://github.com/shaittoo/servicefinder',
                 'start_date' => '2024-01-01',
@@ -232,6 +223,7 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'title' => 'TedX UPV',
                 'description' => 'Welcome to TedX UPV! We unite innovators, thinkers, and leaders to share inspiring ideas. Our events feature speakers like Luke Espiritu, Dr. Majid Fotuhi, and Sha Nacino, covering topics from technology and education to culture and creativity. Visit our website to explore past talks, discover upcoming events, and join us in spreading ideas that matter.',
                 'technologies' => 'React Typescript, Tailwind CSS, Figma, UI/UX Design, Next.js, Node.js, Express.js, MongoDB, Firebase, MySQL, Git/GitHub, VS Code, Figma, Problem Solving, Team Collaboration, Communication, Time Management, Project Management',
+                'image' => 'tedx.jpg',
                 'live_url' => 'https://shainaportfolio.000webhostapp.com/',
                 'github_url' => 'https://github.com/ezerssss/tedxupv',
                 'start_date' => '2024-01-01',
@@ -246,6 +238,7 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'title' => 'UPV DPSM',
                 'description' => 'The official website of the University of the Philippines Visayas\' Division of Physical Sciences and Mathematics, designed to provide students, faculty, and staff with easy access to essential information, resources, and updates.',
                 'technologies' => 'PHP, CodeIgniter 4, Bulma CSS, MySQL, JavaScript',
+                'image' => 'upvdpsm.jpg',
                 'live_url' => 'https://shainaportfolio.000webhostapp.com/',
                 'github_url' => 'https://github.com/shaittoo/shainaportfolio',
                 'start_date' => '2024-01-01',
@@ -259,9 +252,10 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'user_id' => $userId,
                 'title' => 'WakeApp',
                 'description' => 'A mobile app that helps users avoid missing their stop by setting an alarm based on a destination.
-The app uses GPS to track the user’s location and triggers a custom alert when they are close to
+The app uses GPS to track the user\'s location and triggers a custom alert when they are close to
 their selected stop or location.',
                 'technologies' => 'Dart, Flutter, Hive, Google Maps API, Figma, UI/UX Design',
+                'image' => 'wakeapp.jpg',
                 'live_url' => 'https://shainaportfolio.000webhostapp.com/',
                 'github_url' => 'https://github.com/shaittoo/wakeapp',
                 'start_date' => '2024-01-01',
@@ -280,6 +274,7 @@ Students often struggle to share their timetables in a visually engaging format,
 
 With PlanIt, schedule making is more accessible than ever with just a simple tap on your mobile phones.',
                 'technologies' => 'Flutter, Hive, Figma, UI/UX Design, Dart',
+                'image' => 'planit.jpg',
                 'live_url' => 'https://drive.google.com/file/d/1UJtmlKGkie6wQC-HZbIwy-p7t9DsgmOR/view',
                 'github_url' => 'https://github.com/shaittoo/PlanIt',
                 'start_date' => '2024-01-01',
@@ -296,6 +291,7 @@ With PlanIt, schedule making is more accessible than ever with just a simple tap
 
 eHalalan introduces a blockchain-powered voting system designed to solve the challenges faced by traditional election processes. By leveraging blockchain technology, eHalalan ensures that every vote cast is tamper-proof and transparent. Using smart contracts, the system automates vote counting and ensures accurate, real-time results. This eliminates manual errors and speeds up result reporting.',
                 'technologies' => 'Tailwind CSS, React.js, Solidity, Web3.js, Next.js, Node.js, Express.js, MongoDB, Firebase, MySQL, Git/GitHub, VS Code, Figma, Problem Solving, Team Collaboration, Communication, Time Management, Project Management',
+                'image' => 'ehalalan.jpg',
                 'live_url' => 'https://ehalalan.vercel.app/',
                 'github_url' => 'https://github.com/eHalalan/ehalalan',
                 'start_date' => '2024-01-01',
@@ -310,6 +306,7 @@ eHalalan introduces a blockchain-powered voting system designed to solve the cha
                 'title' => 'Kuseena',
                 'description' => 'Kuseena is a mobile application that helps you find a recipe easier.',
                 'technologies' => 'UI/UX Design, Figma, QA',
+                'image' => 'kuseena.jpg',
                 'live_url' => 'https://shainaportfolio.000webhostapp.com/',     
                 'github_url' => 'https://www.figma.com/design/gCrqehdSEvOXKpLMlE1lwx/Kuseena?node-id=237-2386&p=f&t=lTqcHs9BE1f6a1x7-0',
                 'start_date' => '2024-01-01',
