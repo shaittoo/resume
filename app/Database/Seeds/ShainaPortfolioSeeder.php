@@ -14,9 +14,9 @@ class ShainaPortfolioSeeder extends Seeder
             'email' => 'talisayshaina@gmail.com', // You can update this
             'password' => password_hash('password123', PASSWORD_DEFAULT), // Change this password
             'title' => 'Software Engineer',
-            'phone' => '+63 9454038207', // Update with your actual phone
+            'phone' => '+63 9283051386', // Update with your actual phone
             'location' => 'Philippines',
-            'summary' => 'Third-year computer science student and aspiring software engineer with three years of experience in web development. My passion for computer science brought me to the University of the Philippines Visayas, where I am pursuing my bachelor\'s degree. My primary focus is developing web projects, utilizing technologies such as HTML, CSS, JavaScript, PHP, SQL, and Java. Always eager to expand my skill set, I am currently delving into React and am open to learning new programming languages and frameworks.',
+            'summary' => 'I am an incoming 4th-year Computer Science student at the University of the Philippines Visayas with three years of experience in web development and one year in mobile development. My passion for building meaningful and user-focused applications drives me to explore both front-end and back-end technologies. Currently, I’m deepening my skills in React while remaining open to learning new programming languages and frameworks to expand my capabilities as a developer.',
             'profile_image' => '1718773443997.jpg',
             'linkedin' => 'https://www.linkedin.com/in/shainatalisay/',
             'github' => 'https://github.com/shaittoo', 
@@ -39,7 +39,7 @@ class ShainaPortfolioSeeder extends Seeder
                 'end_date' => null,
                 'current' => 1,
                 'description' => 'Provided timely technical support to users, resolving software and hardware issues across internal systems',
-                'achievements' => "• Assisted in maintaining POS devices, user accounts, and network connectivity, improving operational efficiency.",
+                'achievements' => "Assisted in maintaining POS devices, user accounts, and network connectivity, improving operational efficiency.",
                 'order_index' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -53,7 +53,20 @@ class ShainaPortfolioSeeder extends Seeder
                 'end_date' => '2024-08-31',
                 'current' => 0,
                 'description' => 'Started career in software development, working on web applications and learning modern development practices.',
-                'achievements' => "• Assisted in developing web applications using HTML, CSS, and JavaScript\n• Learned modern development frameworks and tools\n• Participated in code reviews and team collaboration\n• Contributed to bug fixes and feature implementations",
+                'achievements' => "Assisted in developing web applications using HTML, CSS, and JavaScript\nLearned modern development frameworks and tools\nParticipated in code reviews and team collaboration\nContributed to bug fixes and feature implementations",
+                'order_index' => 2,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],[
+                'user_id' => $userId,
+                'company' => 'Deparment of Science and Technology - Region 6',
+                'position' => 'FullStack Developer Intern',
+                'location' => 'Philippines',
+                'start_date' => '2025-06-06',
+                'end_date' => '2025-07-18',
+                'current' => 0,
+                'description' => 'Developed and maintained internal web applications using CodeIgniter (PHP framework), Bulma CSS, and MySQL.',
+                'achievements' => "Collaborated with the dev team to implement new features, fix bugs, and optimize system performance for improved user experience.\nLearned modern development frameworks and tools\nParticipated in code reviews and team collaboration\nContributed to bug fixes and feature implementations",
                 'order_index' => 2,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
