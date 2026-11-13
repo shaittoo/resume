@@ -19,3 +19,6 @@
 # OS-generated files
 .DS_Store
 Thumbs.db 
+# Session files created when running locally
+/public/ci_sessions/ci_session*
+/public/WRITEPATH*
