@@ -11,12 +11,12 @@ class ShainaPortfolioSeeder extends Seeder
         // Create user profile
         $userData = [
             'name' => 'Shaina Marie D. Talisay',
-            'email' => 'talisayshaina@gmail.com', // You can update this
+            'email' => 'talisayshaina8@gmail.com',
             'password' => password_hash('password123', PASSWORD_DEFAULT), // Change this password
             'title' => 'Software Engineer',
-            'phone' => '+63 9283051386', // Update with your actual phone
+            'phone' => '+63 9283051386',
             'location' => 'Philippines',
-            'summary' => 'I am an incoming 4th-year Computer Science student at the University of the Philippines Visayas with three years of experience in web development and one year in mobile development. My passion for building meaningful and user-focused applications drives me to explore both front-end and back-end technologies. Currently, I’m deepening my skills in React while remaining open to learning new programming languages and frameworks to expand my capabilities as a developer.',
+            'summary' => 'Software Engineer with a BS in Computer Science from the University of the Philippines Visayas. Most recently I rebuilt bettarservices.com as the sole developer (Next.js, TypeScript, Tailwind CSS, Firestore on Vercel), covering the product catalog, lead capture, and technical SEO. My work spans full-stack web development, blockchain systems (Hyperledger Fabric), and applied AI (retrieval-augmented generation), and I have led small teams as project manager on several builds.',
             'profile_image' => '1718773443997.jpg',
             'linkedin' => 'https://www.linkedin.com/in/shainatalisay/',
             'github' => 'https://github.com/shaittoo', 
@@ -32,42 +32,57 @@ class ShainaPortfolioSeeder extends Seeder
         $experienceData = [
             [
                 'user_id' => $userId,
-                'company' => 'Ganaby Delivery',
-                'position' => 'IT Support Specialist',
+                'company' => 'Bettar Appliance Master',
+                'position' => 'Software Developer',
                 'location' => 'Philippines',
-                'start_date' => '2025-06-01',
-                'end_date' => null,
-                'current' => 1,
-                'description' => 'Provided timely technical support to users, resolving software and hardware issues across internal systems',
-                'achievements' => "Assisted in maintaining POS devices, user accounts, and network connectivity, improving operational efficiency.",
+                'start_date' => '2025-10-01',
+                'end_date' => '2026-11-30',
+                'current' => 0,
+                'description' => 'Sole developer for bettarservices.com, an appliance sales, service, and home repair business.',
+                'achievements' => "Rebuilt bettarservices.com as the only developer using Next.js, TypeScript, and Tailwind CSS on Vercel; the site had about 5,800 users from January to September 2026\nBuilt a Firestore-backed appliance catalog and project gallery with an admin interface, rendering product pages server-side through the Firestore REST API\nIntegrated lead capture (EmailJS contact form, Jobber service-request embed) and a live Google reviews carousel via the Places API\nImplemented technical SEO (next-sitemap, canonical URLs, 301 redirects, JSON-LD Article schema) and managed domains, DNS (EasyDNS), and hosting migrations across multiple business sites",
                 'order_index' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
             [
                 'user_id' => $userId,
-                'company' => 'BlastAsia Inc.',
+                'company' => 'Ganaby Delivery',
+                'position' => 'IT Support Intern',
+                'location' => 'Philippines',
+                'start_date' => '2025-06-01',
+                'end_date' => '2025-08-31',
+                'current' => 0,
+                'description' => 'IT support for staff across internal systems.',
+                'achievements' => "Resolved software, hardware, and network issues for staff across internal systems",
+                'order_index' => 2,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'user_id' => $userId,
+                'company' => 'Department of Science and Technology - Region VI',
+                'position' => 'Full Stack Developer Intern',
+                'location' => 'Philippines',
+                'start_date' => '2025-06-06',
+                'end_date' => '2025-07-18',
+                'current' => 0,
+                'description' => 'Built a Client Satisfaction Measurement (CSM) system used across DOST Region VI provincial offices.',
+                'achievements' => "Architected the backend and database layer (CodeIgniter 4, MySQL) for the Client Satisfaction Measurement system\nBuilt multi-step service feedback forms, service CRUD with filtering, and target-transaction tracking by office, section, and type, with Postman test suites covering all endpoints\nDeveloped the reporting suite: automated ARTA-compliant CSM scoring across 8 Service Quality Dimensions, Citizen's Charter compliance tracking, demographic breakdowns, and PDF/Excel/print export",
+                'order_index' => 3,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'user_id' => $userId,
+                'company' => 'BlastAsia, Inc.',
                 'position' => 'Frontend Developer Intern',
                 'location' => 'Philippines',
                 'start_date' => '2024-07-01',
                 'end_date' => '2024-08-31',
                 'current' => 0,
-                'description' => 'Started career in software development, working on web applications and learning modern development practices.',
-                'achievements' => "Assisted in developing web applications using HTML, CSS, and JavaScript\nLearned modern development frameworks and tools\nParticipated in code reviews and team collaboration\nContributed to bug fixes and feature implementations",
-                'order_index' => 2,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
-            ],[
-                'user_id' => $userId,
-                'company' => 'Deparment of Science and Technology - Region 6',
-                'position' => 'FullStack Developer Intern',
-                'location' => 'Philippines',
-                'start_date' => '2025-06-06',
-                'end_date' => '2025-07-18',
-                'current' => 0,
-                'description' => 'Developed and maintained internal web applications using CodeIgniter (PHP framework), Bulma CSS, and MySQL.',
-                'achievements' => "Collaborated with the dev team to implement new features, fix bugs, and optimize system performance for improved user experience.\nLearned modern development frameworks and tools\nParticipated in code reviews and team collaboration\nContributed to bug fixes and feature implementations",
-                'order_index' => 2,
+                'description' => 'Frontend development on client web applications.',
+                'achievements' => "Built responsive web interfaces and integrated backend APIs using React, TypeScript, and Xamun\nTranslated Figma mockups from the UI/UX team into reusable components",
+                'order_index' => 4,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ]
@@ -79,12 +94,12 @@ class ShainaPortfolioSeeder extends Seeder
         $educationData = [
             [
                 'user_id' => $userId,
-                'institution' => 'University of the Philippines',
+                'institution' => 'University of the Philippines Visayas',
                 'degree' => 'Bachelor of Science',
                 'field_of_study' => 'Computer Science',
-                'location' => 'Philippines',
-                'start_date' => '2022-06-01',
-                'end_date' => '2026-05-31',
+                'location' => 'Miagao, Iloilo',
+                'start_date' => '2022-08-01',
+                'end_date' => '2026-07-31',
                 'current' => 0,
                 'description' => 'Studied computer science with focus on software engineering, algorithms, and web development.',
                 'order_index' => 1,
@@ -96,11 +111,11 @@ class ShainaPortfolioSeeder extends Seeder
                 'institution' => 'Mindanao State University - General Santos City',
                 'degree' => 'Senior High School',
                 'field_of_study' => 'STEM',
-                'location' => 'Philippines',
+                'location' => 'General Santos City, South Cotabato',
                 'start_date' => '2020-06-01',
                 'end_date' => '2022-05-31',
                 'current' => 0,
-                'description' => 'Studied Science, Technology, Engineering and Mathematics.',
+                'description' => 'Science, Technology, Engineering, and Mathematics strand. Graduated With Honors.',
                 'order_index' => 2,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
@@ -125,61 +140,129 @@ class ShainaPortfolioSeeder extends Seeder
 
         // Add skills
         $skillsData = [
-            // Programming Languages
-            ['user_id' => $userId, 'name' => 'JavaScript', 'category' => 'Programming', 'proficiency' => 90, 'order_index' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Python', 'category' => 'Programming', 'proficiency' => 85, 'order_index' => 2, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'PHP', 'category' => 'Programming', 'proficiency' => 80, 'order_index' => 3, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'HTML/CSS', 'category' => 'Programming', 'proficiency' => 95, 'order_index' => 4, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Dart', 'category' => 'Programming', 'proficiency' => 80, 'order_index' => 5, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Java', 'category' => 'Programming', 'proficiency' => 80, 'order_index' => 6, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Flutter', 'category' => 'Programming', 'proficiency' => 80, 'order_index' => 7, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            
-            // Frameworks & Libraries
-            ['user_id' => $userId, 'name' => 'React.js', 'category' => 'Framework', 'proficiency' => 85, 'order_index' => 5, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Node.js', 'category' => 'Framework', 'proficiency' => 80, 'order_index' => 6, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Typescript', 'category' => 'Framework', 'proficiency' => 75, 'order_index' => 7, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Bootstrap', 'category' => 'Framework', 'proficiency' => 90, 'order_index' => 8, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Bulma CSS', 'category' => 'Framework', 'proficiency' => 85, 'order_index' => 9, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            
-            // Databases
-            ['user_id' => $userId, 'name' => 'MySQL', 'category' => 'Database', 'proficiency' => 80, 'order_index' => 10, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'MongoDB', 'category' => 'Database', 'proficiency' => 75, 'order_index' => 11, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Firebase', 'category' => 'Database', 'proficiency' => 75, 'order_index' => 12, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-
-            // Tools & Technologies
-            ['user_id' => $userId, 'name' => 'Git/GitHub', 'category' => 'Tools', 'proficiency' => 85, 'order_index' => 12, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'VS Code', 'category' => 'Tools', 'proficiency' => 90, 'order_index' => 13, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Figma', 'category' => 'Tools', 'proficiency' => 70, 'order_index' => 15, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            
-            // Soft Skills
-            ['user_id' => $userId, 'name' => 'Problem Solving', 'category' => 'Soft', 'proficiency' => 90, 'order_index' => 16, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Team Collaboration', 'category' => 'Soft', 'proficiency' => 85, 'order_index' => 17, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Communication', 'category' => 'Soft', 'proficiency' => 80, 'order_index' => 18, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Time Management', 'category' => 'Soft', 'proficiency' => 85, 'order_index' => 19, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Project Management', 'category' => 'Soft', 'proficiency' => 80, 'order_index' => 20, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-
             // Languages
-            ['user_id' => $userId, 'name' => 'English', 'category' => 'Language', 'proficiency' => 95, 'order_index' => 20, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
-            ['user_id' => $userId, 'name' => 'Filipino', 'category' => 'Language', 'proficiency' => 100, 'order_index' => 21, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')]
+            ['user_id' => $userId, 'name' => 'TypeScript', 'category' => 'Languages', 'proficiency' => 85, 'order_index' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'JavaScript', 'category' => 'Languages', 'proficiency' => 90, 'order_index' => 2, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Python', 'category' => 'Languages', 'proficiency' => 80, 'order_index' => 3, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'PHP', 'category' => 'Languages', 'proficiency' => 80, 'order_index' => 4, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'SQL', 'category' => 'Languages', 'proficiency' => 85, 'order_index' => 5, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Dart', 'category' => 'Languages', 'proficiency' => 75, 'order_index' => 6, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'HTML/CSS', 'category' => 'Languages', 'proficiency' => 95, 'order_index' => 7, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+
+            // Frameworks & Libraries
+            ['user_id' => $userId, 'name' => 'React', 'category' => 'Frameworks & Libraries', 'proficiency' => 90, 'order_index' => 8, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Next.js', 'category' => 'Frameworks & Libraries', 'proficiency' => 85, 'order_index' => 9, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Node.js/Express', 'category' => 'Frameworks & Libraries', 'proficiency' => 80, 'order_index' => 10, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'FastAPI', 'category' => 'Frameworks & Libraries', 'proficiency' => 70, 'order_index' => 11, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Prisma', 'category' => 'Frameworks & Libraries', 'proficiency' => 75, 'order_index' => 12, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Tailwind CSS', 'category' => 'Frameworks & Libraries', 'proficiency' => 90, 'order_index' => 13, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Bootstrap', 'category' => 'Frameworks & Libraries', 'proficiency' => 85, 'order_index' => 14, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Bulma', 'category' => 'Frameworks & Libraries', 'proficiency' => 80, 'order_index' => 15, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'CodeIgniter', 'category' => 'Frameworks & Libraries', 'proficiency' => 80, 'order_index' => 16, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Flutter', 'category' => 'Frameworks & Libraries', 'proficiency' => 75, 'order_index' => 17, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+
+            // Databases & Cloud
+            ['user_id' => $userId, 'name' => 'MySQL', 'category' => 'Databases & Cloud', 'proficiency' => 80, 'order_index' => 18, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Firebase (Firestore)', 'category' => 'Databases & Cloud', 'proficiency' => 85, 'order_index' => 19, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'SQLite', 'category' => 'Databases & Cloud', 'proficiency' => 75, 'order_index' => 20, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Hive', 'category' => 'Databases & Cloud', 'proficiency' => 75, 'order_index' => 21, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Vercel', 'category' => 'Databases & Cloud', 'proficiency' => 85, 'order_index' => 22, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'AWS SDK', 'category' => 'Databases & Cloud', 'proficiency' => 65, 'order_index' => 23, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+
+            // AI/ML
+            ['user_id' => $userId, 'name' => 'Retrieval-Augmented Generation (RAG)', 'category' => 'AI/ML', 'proficiency' => 75, 'order_index' => 24, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Embeddings & Vector Search (ChromaDB)', 'category' => 'AI/ML', 'proficiency' => 75, 'order_index' => 25, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Cross-encoder Reranking', 'category' => 'AI/ML', 'proficiency' => 70, 'order_index' => 26, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'RAGAS Evaluation', 'category' => 'AI/ML', 'proficiency' => 65, 'order_index' => 27, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+
+            // Blockchain
+            ['user_id' => $userId, 'name' => 'Hyperledger Fabric', 'category' => 'Blockchain', 'proficiency' => 75, 'order_index' => 28, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Solidity', 'category' => 'Blockchain', 'proficiency' => 65, 'order_index' => 29, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Hardhat', 'category' => 'Blockchain', 'proficiency' => 65, 'order_index' => 30, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+
+            // DevOps & Tools
+            ['user_id' => $userId, 'name' => 'Docker / Docker Compose', 'category' => 'DevOps & Tools', 'proficiency' => 75, 'order_index' => 31, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Nginx', 'category' => 'DevOps & Tools', 'proficiency' => 70, 'order_index' => 32, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Linux', 'category' => 'DevOps & Tools', 'proficiency' => 75, 'order_index' => 33, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Git', 'category' => 'DevOps & Tools', 'proficiency' => 85, 'order_index' => 34, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Postman', 'category' => 'DevOps & Tools', 'proficiency' => 80, 'order_index' => 35, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'GA4 & Google Search Console', 'category' => 'DevOps & Tools', 'proficiency' => 75, 'order_index' => 36, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Figma', 'category' => 'DevOps & Tools', 'proficiency' => 80, 'order_index' => 37, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+
+            // Soft Skills
+            ['user_id' => $userId, 'name' => 'Project Management', 'category' => 'Soft Skills', 'proficiency' => 85, 'order_index' => 38, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Team Leadership', 'category' => 'Soft Skills', 'proficiency' => 80, 'order_index' => 39, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Problem Solving', 'category' => 'Soft Skills', 'proficiency' => 90, 'order_index' => 40, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Communication', 'category' => 'Soft Skills', 'proficiency' => 80, 'order_index' => 41, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+
+            // Spoken Languages
+            ['user_id' => $userId, 'name' => 'English', 'category' => 'Spoken Languages', 'proficiency' => 95, 'order_index' => 42, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Filipino', 'category' => 'Spoken Languages', 'proficiency' => 100, 'order_index' => 43, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
         ];
 
         $this->db->table('skills')->insertBatch($skillsData);
 
         // Add projects
         $projectsData = [
-            
+            [
+                'user_id' => $userId,
+                'title' => 'eCASVote',
+                'description' => 'A hybrid paper-ballot and blockchain election system for the UPV CAS Student Council. I led a 3-person team as project manager and built the full-stack architecture: Hyperledger Fabric chaincode, a Node.js/Express + Prisma gateway API, a Next.js frontend, and a Python/OpenCV OMR service for automated ballot scanning.
+
+The frontend and OMR service are containerized with multi-stage Docker builds and Docker Compose, and the 3-org Fabric network runs on a Debian LAN server behind an Nginx reverse proxy. An automated integrity-verification script checks ledger-database consistency and double-voting prevention against the live network, alongside fault-injection tests (node failures, tampered records).',
+                'technologies' => 'Hyperledger Fabric, Node.js, Express, Prisma, Next.js, Python, OpenCV, Docker, Nginx',
+                'image' => null,
+                'live_url' => null,
+                'github_url' => null,
+                'start_date' => '2025-06-01',
+                'end_date' => '2026-06-30',
+                'featured' => 1,
+                'order_index' => 1,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'user_id' => $userId,
+                'title' => 'Manu',
+                'description' => 'A two-stage RAG chatbot over product manuals. Uses ChromaDB vector retrieval with MiniLM embeddings and cross-encoder reranking, Phi-3-mini/Qwen-2.5 for generation, and an FFN classifier that routes each query to the right manual.',
+                'technologies' => 'Python, RAG, ChromaDB, MiniLM, Cross-encoder Reranking, Phi-3-mini, Qwen-2.5',
+                'image' => null,
+                'live_url' => null,
+                'github_url' => null,
+                'start_date' => '2026-05-01',
+                'end_date' => '2026-05-31',
+                'featured' => 1,
+                'order_index' => 2,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
+            [
+                'user_id' => $userId,
+                'title' => 'Trace',
+                'description' => 'A tax-incentive application tracking platform for investors and government offices, built at the 2025 Iloilo Province Startup Hackathon. Features a status-stage dashboard for tracking applications and an OpenAI-powered chatbot.',
+                'technologies' => 'Full Stack, OpenAI API, Dashboard, Project Management',
+                'image' => null,
+                'live_url' => 'https://trace-chi.vercel.app/',
+                'github_url' => null,
+                'start_date' => '2025-09-01',
+                'end_date' => '2025-09-30',
+                'featured' => 1,
+                'order_index' => 3,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
+            ],
             [
                 'user_id' => $userId,
                 'title' => 'OMS',
-                'description' => 'The Organization Management System (OMS) is a comprehensive web-based platform designed to streamline and manage the operations of organizations, clubs, or institutions. It integrates various features to enhance organizational efficiency, foster collaboration, and simplify administrative tasks.',
-                'technologies' => 'React.js, Node.js, Express.js, Sprint Planning, Project Management, Task Management, Kanban Board, Gantt Chart, FullStack, MongoDB, Firebase, MySQL, Git/GitHub, VS Code, Figma, Problem Solving, Team Collaboration, Communication, Time Management, Project Management',
+                'description' => 'A platform for student organizations covering authentication and roles, organization and member management, events, and tasks. I led end-to-end development.',
+                'technologies' => 'Next.js, React, TypeScript, Firebase, AWS SDK',
                 'image' => 'oms.jpg',
                 'live_url' => 'https://omsapp.vercel.app/',
                 'github_url' => 'https://github.com/shaittoo/OMS',
-                'start_date' => '2023-03-01',
-                'end_date' => '2023-04-30',
+                'start_date' => '2024-09-01',
+                'end_date' => '2025-05-31',
                 'featured' => 1,
-                'order_index' => 2,
+                'order_index' => 5,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -194,11 +277,11 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'technologies' => 'UI/UX Design, Figma, QA',
                 'image' => 'aidentify.jpg',
                 'live_url' => 'https://www.figma.com/design/3M8N1zlgJnwB4qrxnJAFrg/Design-Components?node-id=0-1&p=f&t=2WdGo7hx8gfEKV50-0',
-                'github_url' => 'https://github.com/shainatalisay/weather-app',
-                'start_date' => '2023-01-01',
-                'end_date' => '2023-02-28',
+                'github_url' => null,
+                'start_date' => '2024-08-01',
+                'end_date' => '2024-09-30',
                 'featured' => 0,
-                'order_index' => 3,
+                'order_index' => 9,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -208,12 +291,12 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'description' => 'BackinUP is a platform for alumni to maintain a relationship with the university. This will facilitate communication, networking, and collaboration between alumni, current students, facility, and staff.',
                 'technologies' => 'PHP, HTML5, CSS3, SQL, Figma, UI/UX Design',
                 'image' => 'backinup.jpg',
-                'live_url' => 'http://localhost:8080',
+                'live_url' => null,
                 'github_url' => 'https://github.com/shaittoo/alumnirelations',
-                'start_date' => '2024-01-01',
-                'end_date' => null,
+                'start_date' => '2024-04-01',
+                'end_date' => '2024-05-31',
                 'featured' => 1,
-                'order_index' => 4,
+                'order_index' => 11,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -223,12 +306,12 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'description' => 'Miagao Service Finder is a platform to help people to locate a wide range of services in Miagao, Iloilo.',
                 'technologies' => 'PHP, CodeIgniter 4, MySQL, JavaScript',
                 'image' => 'servicefinder.jpg',
-                'live_url' => 'https://miservicefinder.000webhostapp.com/',
+                'live_url' => null,
                 'github_url' => 'https://github.com/shaittoo/servicefinder',
-                'start_date' => '2024-01-01',
-                'end_date' => null,
+                'start_date' => '2024-04-01',
+                'end_date' => '2024-05-31',
                 'featured' => 1,
-                'order_index' => 5,
+                'order_index' => 12,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -238,12 +321,12 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'description' => 'Welcome to TedX UPV! We unite innovators, thinkers, and leaders to share inspiring ideas. Our events feature speakers like Luke Espiritu, Dr. Majid Fotuhi, and Sha Nacino, covering topics from technology and education to culture and creativity. Visit our website to explore past talks, discover upcoming events, and join us in spreading ideas that matter.',
                 'technologies' => 'React Typescript, Tailwind CSS, Figma, UI/UX Design, Next.js, Node.js, Express.js, MongoDB, Firebase, MySQL, Git/GitHub, VS Code, Figma, Problem Solving, Team Collaboration, Communication, Time Management, Project Management',
                 'image' => 'tedx.jpg',
-                'live_url' => 'https://shainaportfolio.000webhostapp.com/',
+                'live_url' => null,
                 'github_url' => 'https://github.com/ezerssss/tedxupv',
-                'start_date' => '2024-01-01',
-                'end_date' => null,
+                'start_date' => '2023-09-01',
+                'end_date' => '2023-11-30',
                 'featured' => 1,
-                'order_index' => 6, 
+                'order_index' => 13, 
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -253,12 +336,12 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'description' => 'The official website of the University of the Philippines Visayas\' Division of Physical Sciences and Mathematics, designed to provide students, faculty, and staff with easy access to essential information, resources, and updates.',
                 'technologies' => 'PHP, CodeIgniter 4, MySQL, JavaScript',
                 'image' => 'upvdpsm.jpg',
-                'live_url' => 'https://shainaportfolio.000webhostapp.com/',
+                'live_url' => 'https://upvdpsm.com/',
                 'github_url' => 'https://github.com/shaittoo/shainaportfolio',
-                'start_date' => '2024-01-01',
-                'end_date' => null,
+                'start_date' => '2024-02-01',
+                'end_date' => '2024-04-30',
                 'featured' => 1,
-                'order_index' => 7,
+                'order_index' => 10,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -268,14 +351,14 @@ Tabs will be included, which will allow the user to navigate among the screens o
                 'description' => 'A mobile app that helps users avoid missing their stop by setting an alarm based on a destination.
 The app uses GPS to track the user\'s location and triggers a custom alert when they are close to
 their selected stop or location.',
-                'technologies' => 'Dart, Flutter, Hive, Google Maps API, Figma, UI/UX Design',
+                'technologies' => 'Flutter, Dart, Hive, Google Maps API, GPS',
                 'image' => 'wakeapp.jpg',
                 'live_url' => 'https://drive.google.com/file/d/1k7oNZYxs8SShbb6h__YZ_lf7Cnhu_mlk/view',
                 'github_url' => 'https://github.com/shaittoo/wakeapp',
                 'start_date' => '2025-05-01',
                 'end_date' => '2025-05-31',
                 'featured' => 1,
-                'order_index' => 8, 
+                'order_index' => 4, 
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -291,10 +374,10 @@ With PlanIt, schedule making is more accessible than ever with just a simple tap
                 'image' => 'planit.jpg',
                 'live_url' => 'https://drive.google.com/file/d/1UJtmlKGkie6wQC-HZbIwy-p7t9DsgmOR/view',
                 'github_url' => 'https://github.com/shaittoo/PlanIt',
-                'start_date' => '2024-01-01',
-                'end_date' => null,
+                'start_date' => '2025-03-01',
+                'end_date' => '2025-04-30',
                 'featured' => 1,
-                'order_index' => 9,
+                'order_index' => 7,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s') 
             ],
@@ -308,10 +391,10 @@ eHalalan introduces a blockchain-powered voting system designed to solve the cha
                 'image' => 'eHalalan.jpg',
                 'live_url' => 'https://ehalalan.vercel.app/',
                 'github_url' => 'https://github.com/eHalalan/ehalalan',
-                'start_date' => '2024-01-01',
-                'end_date' => null,
+                'start_date' => '2025-04-01',
+                'end_date' => '2025-04-30',
                 'featured' => 1,
-                'order_index' => 10,
+                'order_index' => 6,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ],
@@ -321,17 +404,26 @@ eHalalan introduces a blockchain-powered voting system designed to solve the cha
                 'description' => 'Kuseena is a mobile application that helps you find a recipe easier.',
                 'technologies' => 'UI/UX Design, Figma, QA',
                 'image' => 'kuseena.jpg',
-                'live_url' => 'https://shainaportfolio.000webhostapp.com/',     
-                'github_url' => 'https://www.figma.com/design/gCrqehdSEvOXKpLMlE1lwx/Kuseena?node-id=237-2386&p=f&t=lTqcHs9BE1f6a1x7-0',
-                'start_date' => '2024-01-01',
-                'end_date' => null,
+                'live_url' => 'https://www.figma.com/design/gCrqehdSEvOXKpLMlE1lwx/Kuseena?node-id=237-2386&p=f&t=lTqcHs9BE1f6a1x7-0',
+                'github_url' => null,
+                'start_date' => '2024-09-01',
+                'end_date' => '2024-12-31',
                 'featured' => 1,
-                'order_index' => 11,
+                'order_index' => 8,
                 'created_at' => date('Y-m-d H:i:s'),        
                 'updated_at' => date('Y-m-d H:i:s')
             ]
         ];
 
         $this->db->table('projects')->insertBatch($projectsData);
+
+        // Add certifications
+        $certificationsData = [
+            ['user_id' => $userId, 'name' => 'Google AI Essentials Specialization', 'issuer' => 'Coursera', 'issue_date' => '2026-11-01', 'credential_url' => null, 'order_index' => 1, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Google AI Professional Certificate', 'issuer' => 'Coursera', 'issue_date' => '2026-09-01', 'credential_url' => null, 'order_index' => 2, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+            ['user_id' => $userId, 'name' => 'Google Project Management Professional Certificate', 'issuer' => 'Coursera', 'issue_date' => '2026-07-01', 'credential_url' => null, 'order_index' => 3, 'created_at' => date('Y-m-d H:i:s'), 'updated_at' => date('Y-m-d H:i:s')],
+        ];
+
+        $this->db->table('certifications')->insertBatch($certificationsData);
     }
 } 

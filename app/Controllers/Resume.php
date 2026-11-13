@@ -7,6 +7,7 @@ use App\Models\ExperienceModel;
 use App\Models\EducationModel;
 use App\Models\SkillsModel;
 use App\Models\ProjectsModel;
+use App\Models\CertificationsModel;
 
 class Resume extends BaseController
 {
@@ -15,6 +16,7 @@ class Resume extends BaseController
     protected $educationModel;
     protected $skillsModel;
     protected $projectsModel;
+    protected $certificationsModel;
 
     public function __construct()
     {
@@ -23,6 +25,7 @@ class Resume extends BaseController
         $this->educationModel = new EducationModel();
         $this->skillsModel = new SkillsModel();
         $this->projectsModel = new ProjectsModel();
+        $this->certificationsModel = new CertificationsModel();
     }
 
     public function index()
@@ -38,7 +41,8 @@ class Resume extends BaseController
             'education' => $user['education'],
             'skills' => $this->skillsModel->getByCategory($user['id']),
             'projects' => $user['projects'],
-            'featured_projects' => $this->projectsModel->getFeatured($user['id'])
+            'featured_projects' => $this->projectsModel->getFeatured($user['id']),
+            'certifications' => $this->certificationsModel->getByUserId($user['id'])
         ];
 
         return view('resume/index', $data);

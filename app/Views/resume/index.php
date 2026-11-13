@@ -1178,6 +1178,7 @@
             <?php if (!empty($education)): ?><li><a href="#education">Education</a></li><?php endif; ?>
             <?php if (!empty($projects)): ?><li><a href="#projects">Projects</a></li><?php endif; ?>
             <?php if (!empty($skills)): ?><li><a href="#skills">Skills</a></li><?php endif; ?>
+            <?php if (!empty($certifications)): ?><li><a href="#certifications">Certifications</a></li><?php endif; ?>
             <li>
                 <div class="theme-switcher">
                     <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
@@ -1314,6 +1315,34 @@
                                 <?= nl2br(esc($edu['description'])) ?>
                             </div>
                         <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
+        <!-- Certifications Section -->
+        <?php if (!empty($certifications)): ?>
+            <div class="section" id="certifications">
+                <h2 class="section-title">Certifications</h2>
+                <?php foreach ($certifications as $cert): ?>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div>
+                                <div class="education-degree">
+                                    <?php if (!empty($cert['credential_url'])): ?>
+                                        <a href="<?= esc($cert['credential_url']) ?>" target="_blank"><?= esc($cert['name']) ?></a>
+                                    <?php else: ?>
+                                        <?= esc($cert['name']) ?>
+                                    <?php endif; ?>
+                                </div>
+                                <?php if (!empty($cert['issuer'])): ?>
+                                    <div class="education-institution"><?= esc($cert['issuer']) ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <?php if (!empty($cert['issue_date'])): ?>
+                                <div><div class="education-date"><?= date('M Y', strtotime($cert['issue_date'])) ?></div></div>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
